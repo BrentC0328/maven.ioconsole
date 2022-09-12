@@ -42,11 +42,7 @@ public class IOConsole {
         print(val + "\n", args);
 
 
-
-        }
-
-
-
+    }
 
 
     /**
@@ -55,12 +51,14 @@ public class IOConsole {
      * @return user's input as String
      */
     public String getStringInput(String prompt, Object... args) {
-        out.println(prompt);
+        println(prompt, args);
         String stringInput = scanner.nextLine();
 
-        for (Object i : args){
-        println(stringInput, args);
-        }
+//        int argLength = args.length;
+//
+//        for (int i = 0; i < argLength; i++) {
+//            println(stringInput, args);
+//        }
         return stringInput;
     }
 
@@ -91,7 +89,7 @@ public class IOConsole {
      */ // TODO - Change recursion to iteration
     public Float getFloatInput(String prompt, Object... args) {
 
-        return Float.parseFloat(getStringInput(prompt, args));
+        return getDoubleInput(prompt, args).floatValue();
     }
 
     /**
